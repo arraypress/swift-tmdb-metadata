@@ -27,7 +27,6 @@ public enum TMDBImageSize: String, Sendable {
 
     /// Builds a full image URL for a TMDB image path (e.g. `/abc.jpg`).
     public func url(for path: String?) -> String? {
-        guard let path, !path.isEmpty else { return nil }
-        return "https://image.tmdb.org/t/p/\(rawValue)\(path)"
+        ImageURL.image(path: path, size: self)
     }
 }

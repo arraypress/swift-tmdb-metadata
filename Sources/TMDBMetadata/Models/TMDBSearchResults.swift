@@ -46,17 +46,6 @@ public struct TMDBResult: Sendable, Identifiable {
 
     // MARK: - Computed
 
-    /// Whether this result is a movie.
-    public var isMovie: Bool { mediaType == "movie" }
-
-    /// Whether this result is a TV show.
-    public var isTV: Bool { mediaType == "tv" }
-
-    /// A poster URL at the given size (defaults to `w500`).
-    public func posterURL(size: TMDBImageSize = .w500) -> String? {
-        size.url(for: posterPath)
-    }
-
     public init(
         id: Int, mediaType: String, title: String, overview: String?, date: String?,
         voteAverage: Double?, voteCount: Int?, popularity: Double?, posterPath: String?, genreIDs: [Int]

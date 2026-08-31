@@ -71,15 +71,6 @@ public struct TMDBShow: Sendable, Identifiable {
 
     // MARK: - Computed
 
-    /// The first-air year, parsed from ``firstAirDate``.
-    public var year: Int? { firstAirDate.flatMap { Int($0.prefix(4)) } }
-
-    /// A poster URL at the given size (defaults to `w500`).
-    public func posterURL(size: TMDBImageSize = .w500) -> String? { size.url(for: posterPath) }
-
-    /// A backdrop URL at the given size (defaults to `w780`).
-    public func backdropURL(size: TMDBImageSize = .w780) -> String? { size.url(for: backdropPath) }
-
     public init(
         id: Int, name: String, originalName: String?, overview: String?, tagline: String?,
         firstAirDate: String?, lastAirDate: String?, numberOfSeasons: Int?, numberOfEpisodes: Int?,

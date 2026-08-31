@@ -72,15 +72,6 @@ public struct TMDBMovie: Sendable, Identifiable {
 
     // MARK: - Computed
 
-    /// The release year, parsed from ``releaseDate``.
-    public var year: Int? { releaseDate.flatMap { Int($0.prefix(4)) } }
-
-    /// A poster URL at the given size (defaults to `w500`).
-    public func posterURL(size: TMDBImageSize = .w500) -> String? { size.url(for: posterPath) }
-
-    /// A backdrop URL at the given size (defaults to `w780`).
-    public func backdropURL(size: TMDBImageSize = .w780) -> String? { size.url(for: backdropPath) }
-
     public init(
         id: Int, title: String, originalTitle: String?, overview: String?, tagline: String?,
         releaseDate: String?, runtime: Int?, voteAverage: Double?, voteCount: Int?, genres: [String],
